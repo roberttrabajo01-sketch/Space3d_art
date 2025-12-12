@@ -1,3 +1,11 @@
+.nav-lang { display: none; }
+
+@media (max-width: 768px) {
+    /* hide header language selector to reduce duplication */
+    .header-container .lang-select:not(.lang-select-mobile) { display: none; }
+    /* show mobile language group inside nav overlay */
+    .nav-lang { display: block; width: 100%; text-align: center; }
+}
 :root {
     --primary: #0a1a3a;
     --secondary: #1a4b8c;
@@ -5,6 +13,7 @@
     --light: #f0f8ff;
     --dark: #050a14;
     --gray: #2d3748;
+    --header-height: 72px;
 }
 
 * {
@@ -20,6 +29,13 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
 }
+
+/* Reserve space for fixed header to avoid content overlap */
+/* `--header-height` is set in :root and updated on breakpoints */
+body { padding-top: var(--header-height); }
+
+/* Prevent background scrolling when mobile menu is open */
+body.menu-open { overflow: hidden; }
 
 h1,
 h2,
@@ -53,6 +69,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
 }
 
 .logo {
@@ -112,6 +130,16 @@ nav a:hover::after {
     font-size: 1.5rem;
     cursor: pointer;
 }
+
+/* accessible, larger menu area */
+.menu-toggle {
+    background: transparent;
+    border: none;
+    color: var(--light);
+    padding: 10px;
+    border-radius: 8px;
+}
+.menu-toggle:focus { outline: 2px solid rgba(0,200,255,0.4); outline-offset: 2px; }
 
 /* Hero Section */
 .hero {
@@ -406,8 +434,10 @@ section {
     cursor: pointer;
     font-weight: 700;
 }
+.lang-btn:focus { outline: 2px solid rgba(0,200,255,0.4); outline-offset: 2px; }
 .lang-btn:hover { background: rgba(255,255,255,0.03); }
 .lang-btn.active { background: var(--accent); color: var(--dark); border-color: var(--accent); }
+.lang-btn[aria-pressed="true"] { background: var(--accent); color: var(--dark); border-color: var(--accent); }
 
 /* Pricing section */
 .pricing-grid {
@@ -608,13 +638,41 @@ footer {
 
 /* Responsive */
 @media (max-width: 992px) {
+    :root { --header-height: 64px; }
+    .header-container { gap: 12px; }
+    .logo { font-size: 1.6rem; }
+    .menu-toggle { display: block; }
+
     .hero h1 {
-        font-size: 2.8rem;
+        font-size: 2.6rem;
     }
 
+    .hero { padding: 140px 0 70px; }
+    nav ul { gap: 20px; }
+    /* make nav overlay available for tablets as well */
     nav ul {
-        gap: 20px;
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        width: 100%;
+        background-color: rgba(5, 10, 20, 0.98);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        gap: 0;
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: all 0.3s;
+        border-bottom: none;
+        z-index: 1500;
+        height: calc(100vh - var(--header-height));
+        display: flex;
+        justify-content: center;
+        pointer-events: none;
     }
+    nav ul.active { transform: translateY(0); opacity: 1; pointer-events: auto; }
+    nav ul li a { display: block; width: 100%; padding: 18px 16px; }
+    section { padding: 60px 0; }
 }
 
 @media (max-width: 768px) {
@@ -624,7 +682,7 @@ footer {
 
     nav ul {
         position: fixed;
-        top: 70px;
+        top: var(--header-height);
         left: 0;
         width: 100%;
         background-color: rgba(5, 10, 20, 0.98);
@@ -637,11 +695,18 @@ footer {
         transition: all 0.3s;
         /* removed mobile nav bottom border */
         border-bottom: none;
+        z-index: 1500;
+        /* full viewport height so links can be centered and tapped */
+        height: calc(100vh - var(--header-height));
+        display: flex;
+        justify-content: center;
+        pointer-events: none; /* prevent clicks when closed */
     }
 
     nav ul.active {
         transform: translateY(0);
         opacity: 1;
+        pointer-events: auto; /* allow clicks when open */
     }
 
     nav ul li {
@@ -649,6 +714,9 @@ footer {
         text-align: center;
         padding: 15px 0;
     }
+    nav a { font-size: 1.25rem; padding: 8px 16px; display: inline-block; }
+    /* make anchors fill the li and be easy to tap */
+    nav ul li a { display: block; width: 100%; padding: 18px 16px; }
 
     .hero {
         padding: 150px 0 80px;
@@ -661,6 +729,18 @@ footer {
     section {
         padding: 60px 0;
     }
+}
+
+/* Mobile-only language selector inside the nav overlay */
+@media (max-width: 768px) {
+    /* hide header language selector to reduce duplication */
+    .header-container .lang-select:not(.lang-select-mobile) { display: none; }
+    /* show mobile language group inside nav overlay */
+    .nav-lang { display: block; width: 100%; text-align: center; }
+    .lang-select.lang-select-mobile { gap: 6px; justify-content: center; padding: 10px 0; }
+    .lang-select.lang-select-mobile .lang-btn { min-width: 46px; height: 40px; font-weight: 700; border-radius: 8px; }
+    /* touch-friendly links inside menu */
+    nav ul li { padding: 18px 0; }
 }
 
 @media (max-width: 576px) {

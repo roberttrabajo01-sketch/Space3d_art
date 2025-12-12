@@ -23,9 +23,9 @@
                 Space3d<span>_art</span>
             </a>
 
-            <div class="menu-toggle" id="menuToggle">
-                <i class="fas fa-bars"></i>
-            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-controls="navMenu" aria-expanded="false">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
 
             <nav>
                 <ul id="navMenu">
@@ -33,9 +33,17 @@
                     <li><a href="#servicios" data-i18n="nav.servicios">Servicios</a></li>
                     <li><a href="#portfolio" data-i18n="nav.portfolio">Portafolio</a></li>
                     <li><a href="#contacto" data-i18n="nav.contacto">Contacto</a></li>
+                    <li class="nav-lang">
+                        <div class="lang-select lang-select-mobile" id="langSelectMobile" aria-label="Seleccionar idioma">
+                            <button class="lang-btn" data-lang="es">ES</button>
+                            <button class="lang-btn" data-lang="en">EN</button>
+                            <button class="lang-btn" data-lang="fr">FR</button>
+                            <button class="lang-btn" data-lang="jp">日本語</button>
+                        </div>
+                    </li>
                 </ul>
             </nav>
-            <!-- Language selector -->
+            <!-- Language selector (header) -->
             <div class="lang-select" id="langSelect" aria-label="Seleccionar idioma">
                 <button class="lang-btn" data-lang="es">ES</button>
                 <button class="lang-btn" data-lang="en">EN</button>
@@ -211,17 +219,50 @@
         const menuToggle = document.getElementById('menuToggle');
         const navMenu = document.getElementById('navMenu');
 
-        if (menuToggle && navMenu) {
-            menuToggle.addEventListener('click', () => {
-                navMenu.classList.toggle('active');
-            });
+        function setMenuOpen(isOpen) {
+            if (!menuToggle || !navMenu) return;
+            if (isOpen) {
+                navMenu.classList.add('active');
+                menuToggle.setAttribute('aria-expanded', 'true');
+                menuToggle.setAttribute('aria-label', 'Cerrar menú');
+                const icon = menuToggle.querySelector('i');
+                if (icon) { icon.classList.remove('fa-bars'); icon.classList.add('fa-times'); }
+                document.body.classList.add('menu-open');
+            } else {
+                navMenu.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                menuToggle.setAttribute('aria-label', 'Abrir menú');
+                const icon = menuToggle.querySelector('i');
+                if (icon) { icon.classList.remove('fa-times'); icon.classList.add('fa-bars'); }
+                document.body.classList.remove('menu-open');
+            }
         }
+
+        if (menuToggle && navMenu) {
+            menuToggle.addEventListener('click', () => setMenuOpen(!navMenu.classList.contains('active')));
+        }
+
+        // Close the mobile nav if window is resized to wider than tablet/desktop
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 992) setMenuOpen(false);
+        });
+        // click outside to close mobile nav
+        document.addEventListener('click', (e) => {
+            if (!navMenu.classList.contains('active')) return;
+            // if click inside navMenu or on the menu toggle, ignore
+            if (e.target.closest('#navMenu') || e.target.closest('#menuToggle')) return;
+            setMenuOpen(false);
+        });
 
         // Cerrar menú al hacer clic en un enlace
         document.querySelectorAll('nav a').forEach(link => {
             link.addEventListener('click', () => {
-                if (navMenu) navMenu.classList.remove('active');
+                setMenuOpen(false);
             });
+        });
+        // Close nav on escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') setMenuOpen(false);
         });
 
         // Formulario de contacto (envío funcional)
@@ -528,23 +569,39 @@
             }
         }
 
-        // Attach language buttons
+        // Attach language buttons (support header + mobile menu duplicates)
         document.addEventListener('DOMContentLoaded', () => {
-            const langSelect = document.getElementById('langSelect');
-            if (langSelect) {
+            const langSelects = document.querySelectorAll('.lang-select');
+            langSelects.forEach(langSelect => {
                 langSelect.addEventListener('click', (e) => {
                     const btn = e.target.closest('.lang-btn');
                     if (!btn) return;
                     const lang = btn.getAttribute('data-lang');
-                    // toggle active
-                    langSelect.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
+                    // toggle active on all selectors (header + mobile)
+                    document.querySelectorAll('.lang-select .lang-btn').forEach(b => {
+                        b.classList.remove('active');
+                        b.setAttribute('aria-pressed', 'false');
+                    });
+                    document.querySelectorAll('.lang-select .lang-btn').forEach(b => {
+                        if (b.getAttribute('data-lang') === lang) {
+                            b.classList.add('active');
+                            b.setAttribute('aria-pressed', 'true');
+                        }
+                    });
                     applyTranslations(lang);
+                    // close menu after selecting language on mobile
+                    setMenuOpen(false);
                 });
-                // set initial active button
-                const initialBtn = langSelect.querySelector('[data-lang="' + currentLang + '"]');
-                if (initialBtn) initialBtn.classList.add('active');
-            }
+            });
+            // set initial active button on all selector instances
+            document.querySelectorAll('.lang-select .lang-btn').forEach(b => {
+                if (b.getAttribute('data-lang') === currentLang) {
+                    b.classList.add('active');
+                    b.setAttribute('aria-pressed', 'true');
+                } else {
+                    b.setAttribute('aria-pressed', 'false');
+                }
+            });
             // apply default language
             applyTranslations(currentLang);
         });
@@ -649,10 +706,13 @@
 
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
+                    // use header height to avoid overlaps on all screen sizes
+                    const header = document.querySelector('header');
+                    const headerHeight = header ? header.offsetHeight : 80;
                     window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
+                            top: targetElement.offsetTop - headerHeight - 8,
+                            behavior: 'smooth'
+                        });
                 }
             });
         });
