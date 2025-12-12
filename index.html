@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space3d_art - Creación de Modelos 3D</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- EmailJS (opcional) para enviar correos desde el frontend sin servidor. Si no lo configuras, el formulario usará mailto: -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+</head>
+
+<body>
+    <!-- Header y Navegación -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <i class="fas fa-cube"></i>
+                Space3d<span>_art</span>
+            </a>
+
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="#inicio" data-i18n="nav.inicio">Inicio</a></li>
+                    <li><a href="#servicios" data-i18n="nav.servicios">Servicios</a></li>
+                    <li><a href="#portfolio" data-i18n="nav.portfolio">Portafolio</a></li>
+                    <li><a href="#contacto" data-i18n="nav.contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            <!-- Language selector -->
+            <div class="lang-select" id="langSelect" aria-label="Seleccionar idioma">
+                <button class="lang-btn" data-lang="es">ES</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="fr">FR</button>
+                <button class="lang-btn" data-lang="jp">日本語</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección Hero / Inicio -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <h1 data-i18n="hero.title">CREACIÓN DE MODELOS 3D PROFESIONALES</h1>
+            <p data-i18n="hero.desc">Transformo ideas en realidades digitales. Especializado en modelado 3D, texturizado, animación y renderizado para videojuegos, visualizaciones arquitectónicas y proyectos creativos.</p>
+            <div class="hero-ctas">
+                <a href="#portfolio" class="btn" data-i18n="hero.cta">Ver Portafolio</a>
+                <a href="#precios" class="btn btn-secondary" data-i18n="hero.pricing">Precios</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Precios -->
+    <section id="precios" class="pricing">
+        <div class="container">
+            <h2 class="section-title" data-i18n="pricing.title">Plan de Precios</h2>
+            <p class="section-intro" data-i18n="pricing.intro">No hay tarifas ocultas. Sin contratos.</p>
+
+            <div id="pricingGrid" class="pricing-grid" aria-live="polite"></div>
+        </div>
+    </section>
+
+    <!-- Sección Servicios -->
+    <section id="servicios">
+        <div class="container">
+            <h2 class="section-title" data-i18n="services.title">Mis Servicios</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3 data-i18n="services.modelado.title">Modelado 3D</h3>
+                    <p data-i18n="services.modelado.desc">Creación de modelos 3D detallados para personajes, objetos y entornos utilizando las últimas técnicas y software profesional.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3 data-i18n="services.texturas.title">Texturizado y Shading</h3>
+                    <p data-i18n="services.texturas.desc">Desarrollo de texturas realistas y materiales que dan vida a tus modelos, asegurando la máxima calidad visual.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <h3 data-i18n="services.animacion.title">Animación y Rigging</h3>
+                    <p data-i18n="services.animacion.desc">Animación fluida y sistemas de rigging para personajes y objetos, listos para implementar en cualquier proyecto.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3 data-i18n="services.render.title">Renderizado y Composición</h3>
+                    <p data-i18n="services.render.desc">Producción de renders de alta calidad y composición de escenas para proyectos visuales, publicitarios y arquitectónicos.</p>
+                </div>
+            </div>
+
+            <div class="services-description">
+                <h3 data-i18n="services.process.title">Proceso de Trabajo</h3>
+                <p data-i18n="services.process.desc">Mi enfoque combina creatividad y precisión técnica. Trabajo con Blender, ZBrush, Substance Painter y otras herramientas profesionales para ofrecer resultados excepcionales. Cada proyecto incluye consultoría inicial, desarrollo iterativo con feedback constante y entrega final en los formatos requeridos.</p>
+                <p data-i18n="services.process.desc2">Desde conceptos simples hasta proyectos complejos, aseguro calidad, atención al detalle y cumplimiento de plazos en cada etapa del proceso.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Portafolio -->
+    <section id="portfolio">
+        <div class="container">
+            <h2 class="section-title" data-i18n="portfolio.title">Portafolio</h2>
+            <p class="section-intro" data-i18n="portfolio.intro">Una selección de mis trabajos recientes que muestran mis habilidades en diferentes áreas del modelado 3D y la creación digital.</p>
+
+            <div id="portfolioGrid" class="portfolio-grid"></div>
+
+            <!-- Carousel: utiliza las imágenes decorativas no seleccionables -->
+            <div id="carousel" class="carousel-container" aria-label="Galería de imágenes">
+                <div class="carousel-wrapper">
+                    <div class="carousel-track"></div>
+                </div>
+                <button class="carousel-control prev" aria-label="Anterior">&#10094;</button>
+                <button class="carousel-control next" aria-label="Siguiente">&#10095;</button>
+                <div class="carousel-dots" role="tablist" aria-label="Indicadores"></div>
+            </div>
+
+            <div id="decorGallery" class="decor-gallery"></div>
+
+            <div class="portfolio-cta">
+                <a href="#" class="btn btn-email-request" data-i18n="portfolio.cta">Solicitar un Proyecto Personalizado</a>
+                <a href="#precios" class="btn btn-secondary" data-i18n="portfolio.pricing">Precios</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Contacto -->
+    <section id="contacto">
+        <div class="container">
+                        <h2 class="section-title" data-i18n="contact.title">Contacto</h2>
+                        <p class="section-intro section-intro--large" data-i18n="contact.intro">¿Tienes un proyecto en mente?
+                Contáctame para discutir cómo puedo ayudarte a materializar tus ideas en impresionantes modelos 3D.</p>
+
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3 data-i18n="contact.info.title">Información de Contacto</h3>
+                    <p><a id="contact-email-link" href="https://mail.google.com/mail/?view=cm&fs=1&to=space3darte@gmail.com" title="Enviar correo a space3darte@gmail.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-envelope"></i> <span data-i18n="contact.email">space3darte@gmail.com</span></a></p>
+                    <!-- Número eliminado por petición del usuario -->
+                    <p><i class="fas fa-map-marker-alt"></i> USA</p>
+                    <p><i class="fas fa-clock"></i> Lunes a Viernes: 9:00 - 18:00</p>
+
+                    <div class="social-icons">
+                        <!-- X (antes Twitter) -> enlazado a Threads -->
+                        <a href="https://www.threads.com/%40space3d_art?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAb21jcAOoNUpleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA81NjcwNjczNDMzNTI0MjcAAadwuTMpD3dsWuEZguuUVmthSX5b92eCWGUhw2dUzF3gOyGXZFTtmQKumjDZ6A_aem_0glu-FndqF3XKTmzZXMklA" title="Threads - space3d_art" aria-label="Threads - space3d_art" target="_blank" rel="noopener noreferrer"><i class="fab fa-x"></i></a>
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/space3d_art/" title="Instagram - space3d_art" aria-label="Instagram - space3d_art" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <!-- Facebook (nuevo) -->
+                        <a href="https://www.facebook.com/share/17bgV4UH4X/" title="Compartir en Facebook" aria-label="Compartir en Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                        <!-- Removed: LinkedIn & ArtStation per request -->
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                        <form id="contactForm">
+                               <input id="cf-name" type="text" name="name" placeholder="Tu nombre" data-i18n-placeholder="contact.form.name" required>
+                               <input id="cf-email" type="email" name="email" placeholder="Tu email" data-i18n-placeholder="contact.form.email" required>
+                               <input id="cf-subject" type="text" name="subject" placeholder="Asunto" data-i18n-placeholder="contact.form.subject" required>
+                               <textarea id="cf-message" name="message" placeholder="Describe tu proyecto o consulta" data-i18n-placeholder="contact.form.message" required></textarea>
+                               <button type="submit" class="btn full-width" data-i18n="contact.form.submit">Enviar Mensaje</button>
+                        </form>
+                        <div id="formNotification" class="toast" role="status" aria-live="polite" hidden></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">Space3d_art</div>
+                    <p>Creación de modelos 3D profesionales para videojuegos, visualizaciones y proyectos creativos.</p>
+                </div>
+
+                <div>
+                    <h4>Enlaces Rápidos</h4>
+                        <ul class="footer-links">
+                            <li><a href="#inicio">Inicio</a></li>
+                            <li><a href="#servicios" data-i18n="nav.servicios">Servicios</a></li>
+                            <li><a href="#portfolio" data-i18n="nav.portfolio">Portafolio</a></li>
+                            <li><a href="#contacto" data-i18n="nav.contacto">Contacto</a></li>
+                        </ul>
+                </div>
+            </div>
+
+            <div class="copyright">
+                &copy; 2026 Space3d_art. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menú responsive
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        if (menuToggle && navMenu) {
+            menuToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+        }
+
+        // Cerrar menú al hacer clic en un enlace
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navMenu) navMenu.classList.remove('active');
+            });
+        });
+
+        // Formulario de contacto (envío funcional)
+        const contactForm = document.getElementById('contactForm');
+        const formNotification = document.getElementById('formNotification');
+
+        // Internationalization (i18n) strings
+        const translations = {
+            es: {
+                'nav.inicio': 'Inicio',
+                'nav.servicios': 'Servicios',
+                'nav.portfolio': 'Portafolio',
+                'nav.contacto': 'Contacto',
+                'hero.title': 'CREACIÓN DE MODELOS 3D PROFESIONALES',
+                'hero.desc': 'Transformo ideas en realidades digitales. Especializado en modelado 3D, texturizado, animación y renderizado para videojuegos, visualizaciones arquitectónicas y proyectos creativos.',
+                'hero.cta': 'Ver Portafolio',
+                'hero.pricing': 'Precios',
+                'services.title': 'Mis Servicios',
+                'services.modelado.title': 'Modelado 3D',
+                'services.modelado.desc': 'Creación de modelos 3D detallados para personajes, objetos y entornos utilizando las últimas técnicas y software profesional.',
+                'services.texturas.title': 'Texturizado y Shading',
+                'services.texturas.desc': 'Desarrollo de texturas realistas y materiales que dan vida a tus modelos, asegurando la máxima calidad visual.',
+                'services.animacion.title': 'Animación y Rigging',
+                'services.animacion.desc': 'Animación fluida y sistemas de rigging para personajes y objetos, listos para implementar en cualquier proyecto.',
+                'services.render.title': 'Renderizado y Composición',
+                'services.render.desc': 'Producción de renders de alta calidad y composición de escenas para proyectos visuales, publicitarios y arquitectónicos.',
+                'services.process.title': 'Proceso de Trabajo',
+                'services.process.desc': 'Mi enfoque combina creatividad y precisión técnica. Trabajo con Blender, ZBrush, Substance Painter y otras herramientas profesionales para ofrecer resultados excepcionales. Cada proyecto incluye consultoría inicial, desarrollo iterativo con feedback constante y entrega final en los formatos requeridos.',
+                'services.process.desc2': 'Desde conceptos simples hasta proyectos complejos, aseguro calidad, atención al detalle y cumplimiento de plazos en cada etapa del proceso.',
+                'portfolio.title': 'Portafolio',
+                'portfolio.intro': 'Una selección de mis trabajos recientes que muestran mis habilidades en diferentes áreas del modelado 3D y la creación digital.',
+                'portfolio.cta': 'Solicitar un Proyecto Personalizado',
+                'portfolio.pricing': 'Precios',
+                'portfolio.item1.title': 'Render Final',
+                'portfolio.item1.desc': 'Render final y texturizado. Preparación del modelo para presentación y revisión de color.',
+                'portfolio.item2.title': 'Modelado',
+                'portfolio.item2.desc': 'Modelado y sculpting, con atención a topología y optimización para animación.',
+                'portfolio.item3.title': 'Texturas',
+                'portfolio.item3.desc': 'Creación de texturas y materiales PBR, con mapas de roughness y normal maps.',
+                'portfolio.item4.title': 'Composición',
+                'portfolio.item4.desc': 'Composición final en post-procesado, corrección de color y preparación de entregables.',
+                'portfolio.item5.title': 'Iluminación',
+                'portfolio.item5.desc': 'Setup de iluminación para destacar materialidad y volúmenes en la escena.',
+                'portfolio.item6.title': 'Detalle',
+                'portfolio.item6.desc': 'Detalles del modelo y optimización de la geometría para producción.',
+                'contact.title': 'Contacto',
+                'contact.intro': '¿Tienes un proyecto en mente? Contáctame para discutir cómo puedo ayudarte a materializar tus ideas en impresionantes modelos 3D.',
+                'contact.info.title': 'Información de Contacto',
+                'contact.email': 'space3darte@gmail.com',
+                'contact.form.name': 'Tu nombre',
+                'contact.form.email': 'Tu email',
+                'contact.form.subject': 'Asunto',
+                'contact.form.message': 'Describe tu proyecto o consulta',
+                'contact.form.submit': 'Enviar Mensaje',
+                'contact.cta': 'Contactar ya',
+                'pricing.title': 'Plan de Precios',
+                'pricing.intro': 'No hay tarifas ocultas. Sin contratos.',
+                'pricing.note': 'Derecho y Uso exclusivo $2.99+',
+                'pricing.card': 'Plan',
+                'pricing.modal.title': 'Detalle del Plan',
+                'pricing.modal.cta': 'Contactar este plan',
+                'pricing.modal.desc': 'Ver detalles y contactar para este plan.',
+                'email.subject.project': 'Solicitud de proyecto personalizado',
+                'email.body.greeting': 'Hola, estoy interesado en contratar un proyecto personalizado. Por favor indican los pasos a seguir.',
+                'notification.fillFields': 'Por favor completa todos los campos.',
+                'notification.sent': 'Mensaje enviado correctamente.',
+                'notification.emailError': 'Error al enviar. Usa tu cliente de correo.',
+                'notification.gmailOpened': 'Se abrió Gmail para que completes y envíes el mensaje.',
+                'email.subject.pricing': 'Interés en plan de precios',
+                'email.body.pricing': 'Hola, estoy interesado en este plan de precios. Por favor indícame más detalles.',
+                'pricing.modal.zoom': 'Ampliar imagen',
+                'pricing.modal.closeZoom': 'Cerrar zoom',
+                'pricing.modal.imageTextLoading': 'Extrayendo texto...'
+            },
+            en: {
+                'nav.inicio': 'Home',
+                'nav.servicios': 'Services',
+                'nav.portfolio': 'Portfolio',
+                'nav.contacto': 'Contact',
+                'hero.title': 'PROFESSIONAL 3D MODEL CREATION',
+                'hero.desc': 'I transform ideas into digital realities. Specialized in 3D modeling, texturing, animation and rendering for games, architectural visualizations and creative projects.',
+                'hero.cta': 'View Portfolio',
+                'hero.pricing': 'Pricing',
+                'services.title': 'My Services',
+                'services.modelado.title': '3D Modeling',
+                'services.modelado.desc': 'Creation of detailed 3D models for characters, objects and environments using the latest techniques and professional software.',
+                'services.texturas.title': 'Texturing & Shading',
+                'services.texturas.desc': 'Development of realistic textures and materials that bring your models to life, ensuring top visual quality.',
+                'services.animacion.title': 'Animation & Rigging',
+                'services.animacion.desc': 'Smooth animation and rigging systems for characters and objects, ready to implement in any project.',
+                'services.render.title': 'Rendering & Compositing',
+                'services.render.desc': 'High-quality renders and scene compositing for visual, advertising and architectural projects.',
+                'services.process.title': 'Workflow',
+                'services.process.desc': 'My approach combines creativity and technical precision. I work with Blender, ZBrush, Substance Painter and other professional tools to deliver exceptional results. Each project includes initial consultation, iterative development with feedback and final delivery in required formats.',
+                'services.process.desc2': 'From simple concepts to complex productions, I ensure quality, attention to detail, and on-time delivery.',
+                'portfolio.title': 'Portfolio',
+                'portfolio.intro': 'A selection of my recent work showcasing skills across 3D modeling and digital creation.',
+                'portfolio.cta': 'Request a Custom Project',
+                'portfolio.pricing': 'Pricing',
+                'portfolio.item1.title': 'Final Render',
+                'portfolio.item1.desc': 'Final render and texturing. Model prepared for presentation and color review.',
+                'portfolio.item2.title': 'Modeling',
+                'portfolio.item2.desc': 'Modeling and sculpting, with attention to topology and optimization for animation.',
+                'portfolio.item3.title': 'Textures',
+                'portfolio.item3.desc': 'Creation of textures and PBR materials, with roughness and normal maps.',
+                'portfolio.item4.title': 'Compositing',
+                'portfolio.item4.desc': 'Final compositing in post, color correction and deliverable preparation.',
+                'portfolio.item5.title': 'Lighting',
+                'portfolio.item5.desc': 'Lighting setup to emphasize materiality and forms in the scene.',
+                'portfolio.item6.title': 'Detail',
+                'portfolio.item6.desc': 'Model detailing and geometry optimization for production.',
+                'contact.title': 'Contact',
+                'contact.intro': "Have a project in mind? Contact me to discuss how I can help turn your ideas into impressive 3D models.",
+                'contact.info.title': 'Contact Information',
+                'contact.email': 'space3darte@gmail.com',
+                'contact.form.name': 'Your name',
+                'contact.form.email': 'Your email',
+                'contact.form.subject': 'Subject',
+                'contact.form.message': 'Describe your project or inquiry',
+                'contact.form.submit': 'Send Message',
+                'contact.cta': 'Contact now',
+                'pricing.title': 'Pricing Plans',
+                'pricing.intro': 'No hidden fees. No contract.',
+                'pricing.note': 'Rights and Exclusive use $2.99+',
+                'pricing.card': 'Plan',
+                'email.subject.project': 'Custom project request',
+                'email.body.greeting': "Hi, I'm interested in commissioning a custom project. Please let me know the next steps.",
+                'notification.fillFields': 'Please fill in all fields.',
+                'notification.sent': 'Message sent successfully.',
+                'notification.emailError': 'Error sending message. Use your email client.',
+                'notification.gmailOpened': 'Gmail compose opened so you can finish and send the message.',
+                'email.subject.pricing': 'Pricing plan inquiry',
+                'email.body.pricing': "Hi, I'm interested in this pricing plan. Please send more details."
+                , 'pricing.modal.title': 'Pricing Plan Details',
+                'pricing.modal.cta': 'Contact this plan',
+                'pricing.modal.desc': 'View details and contact about this plan.',
+                'pricing.modal.zoom': 'Zoom image',
+                'pricing.modal.closeZoom': 'Close zoom',
+                'pricing.modal.imageTextLoading': 'Extracting text...'
+            },
+            fr: {
+                'nav.inicio': 'Accueil',
+                'nav.servicios': 'Services',
+                'nav.portfolio': 'Portfolio',
+                'nav.contacto': 'Contact',
+                'hero.title': 'CRÉATION DE MODÈLES 3D PROFESSIONNELS',
+                'hero.desc': "Je transforme des idées en réalités numériques. Spécialisé en modélisation 3D, texturage, animation et rendu pour jeux vidéo, visualisations architecturales et projets créatifs.",
+                'hero.cta': 'Voir le Portfolio',
+                'hero.pricing': 'Prix',
+                'services.title': 'Mes Services',
+                'services.modelado.title': 'Modélisation 3D',
+                'services.modelado.desc': 'Création de modèles 3D détaillés pour personnages, objets et environnements en utilisant les techniques et logiciels professionnels.',
+                'services.texturas.title': 'Texturage & Shading',
+                'services.texturas.desc': 'Développement de textures et matériaux réalistes qui donnent vie à vos modèles, garantissant une qualité visuelle maximale.',
+                'services.animacion.title': 'Animation & Rigging',
+                'services.animacion.desc': "Animation fluide et systèmes de rigging pour personnages et objets, prêts à être intégrés dans n'importe quel projet.",
+                'services.render.title': 'Rendu & Composition',
+                'services.render.desc': 'Rendus de haute qualité et composition de scènes pour projets visuels, publicitaires et architecturaux.',
+                'services.process.title': 'Processus de Travail',
+                'services.process.desc': "Ma démarche combine créativité et précision technique. J'utilise Blender, ZBrush, Substance Painter et d'autres outils professionnels pour fournir des résultats exceptionnels.",
+                'services.process.desc2': "Des concepts simples aux productions complexes, j'assure la qualité, l'attention aux détails et le respect des délais.",
+                'portfolio.title': 'Portefeuille',
+                'portfolio.intro': 'Une sélection de mes travaux récents démontrant mes compétences en modélisation 3D et création numérique.',
+                'portfolio.cta': 'Demander un Projet Personnalisé',
+                'portfolio.pricing': 'Prix',
+                'portfolio.item1.title': 'Rendu Final',
+                'portfolio.item1.desc': 'Rendu final et texturation. Préparation du modèle pour présentation et révision couleur.',
+                'portfolio.item2.title': 'Modélisation',
+                'portfolio.item2.desc': "Modélisation et sculpting, en portant attention à la topologie et à l'optimisation pour l'animation.",
+                'portfolio.item3.title': 'Textures',
+                'portfolio.item3.desc': 'Création de textures et matériaux PBR, avec roughness et normal maps.',
+                'portfolio.item4.title': 'Composition',
+                'portfolio.item4.desc': 'Composition finale en post-traitement, correction des couleurs et préparation des livrables.',
+                'portfolio.item5.title': 'Éclairage',
+                'portfolio.item5.desc': "Configuration de l'éclairage pour mettre en valeur la matérialité et les volumes.",
+                'portfolio.item6.title': 'Détails',
+                'portfolio.item6.desc': 'Détails du modèle et optimisation de la géométrie pour la production.',
+                'contact.title': 'Contact',
+                'contact.intro': "Vous avez un projet ? Contactez-moi pour discuter de la façon dont je peux vous aider à transformer vos idées en modèles 3D impressionnants.",
+                'contact.info.title': 'Informations de Contact',
+                'contact.email': 'space3darte@gmail.com',
+                'contact.form.name': 'Votre nom',
+                'contact.form.email': 'Votre e-mail',
+                'contact.form.subject': 'Sujet',
+                'contact.form.message': 'Décrivez votre projet ou demande',
+                'contact.form.submit': 'Envoyer le message',
+                'contact.cta': 'Contacter',
+                'pricing.title': 'Plan de prix',
+                'pricing.intro': "Il n'y a pas de frais cachés. Aucun contrat.",
+                'pricing.note': 'Droits et utilisation exclusive $2.99+',
+                'email.subject.project': 'Demande de projet personnalisé',
+                'email.body.greeting': "Bonjour, je suis intéressé par un projet personnalisé. Merci de m'indiquer la marche à suivre.",
+                'notification.fillFields': 'Veuillez remplir tous les champs.',
+                'notification.sent': 'Message envoyé avec succès.',
+                'notification.emailError': "Erreur d'envoi. Utilisez votre client de messagerie.",
+                'notification.gmailOpened': "La fenêtre de composition Gmail s'est ouverte pour que vous puissiez envoyer le message.",
+                'email.subject.pricing': 'Demande sur les tarifs',
+                'email.body.pricing': "Bonjour, je suis intéressé par ce plan tarifaire. Merci de m'envoyer plus de détails."
+                , 'pricing.modal.title': 'Détails du Plan',
+                'pricing.modal.cta': 'Contacter ce plan',
+                'pricing.modal.desc': 'Voir les détails et contacter au sujet de ce plan.',
+                "pricing.modal.zoom": "Agrandir l'image",
+                'pricing.modal.closeZoom': 'Fermer le zoom',
+                'pricing.modal.imageTextLoading': "Extraction du texte..."
+            },
+            jp: {
+                'nav.inicio': 'ホーム',
+                'nav.servicios': 'サービス',
+                'nav.portfolio': 'ポートフォリオ',
+                'nav.contacto': '連絡',
+                'hero.title': '3Dモデル制作（プロフェッショナル）',
+                'hero.desc': 'アイデアをデジタルに変換します。ゲーム、建築可視化、クリエイティブプロジェクト向けに、3Dモデリング、テクスチャ、アニメーション、レンダリングを提供します。',
+                'hero.cta': '作品を見る',
+                'hero.pricing': '価格',
+                'services.title': 'サービス',
+                'services.modelado.title': '3D建模',
+                'services.modelado.desc': '为角色、物体和环境创建高细节3D模型，使用最新技术和专业软件。',
+                'services.texturas.title': '纹理 & 着色',
+                'services.texturas.desc': '开发逼真的纹理和材质，使模型栩栩如生，确保视觉质量。',
+                'services.animacion.title': '动画 & 绑定',
+                'services.animacion.desc': '为角色和物体提供流畅动画和绑定系统，便于集成到任何项目中。',
+                'services.render.title': '渲染 & 合成',
+                'services.render.desc': '高质量渲染和场景合成为视觉、广告和建筑项目提供支持。',
+                'services.process.title': '工作流程',
+                'services.process.desc': '我的方法结合创意与技术精度。我使用Blender、ZBrush、Substance Painter等专业工具来提供出色的结果。',
+                'services.process.desc2': '从简单概念到复杂项目，我确保质量、关注细节并按时交付。',
+                'portfolio.title': '作品集',
+                'portfolio.intro': '展示我最近工作的精选，体现3D建模和数字创作的技能。',
+                'portfolio.cta': '请求定制项目',
+                'portfolio.pricing': '价格',
+                'portfolio.item1.title': '最终渲染',
+                'portfolio.item1.desc': '最终渲染与贴图。模型已准备好用于演示与颜色审查。',
+                'portfolio.item2.title': '建模',
+                'portfolio.item2.desc': '建模与雕刻，注重拓扑和动画优化。',
+                'portfolio.item3.title': '纹理',
+                'portfolio.item3.desc': '创建纹理和PBR材质，包含粗糙度与法线贴图。',
+                'portfolio.item4.title': '合成',
+                'portfolio.item4.desc': '后期合成、色彩校正与交付准备。',
+                'portfolio.item5.title': '灯光',
+                'portfolio.item5.desc': '灯光设置以突出材质与体积感。',
+                'portfolio.item6.title': '细节',
+                'portfolio.item6.desc': '模型细节与生产级几何优化。',
+                'contact.title': '联系',
+                'contact.intro': '有项目想法吗？联系我，讨论如何将想法转化为令人惊叹的3D模型。',
+                'contact.info.title': '联系方式',
+                'contact.email': 'space3darte@gmail.com',
+                'contact.form.name': '你的名字',
+                'contact.form.email': '你的邮箱',
+                'contact.form.subject': '主题',
+                'contact.form.message': '描述你的项目或问题',
+                'contact.form.submit': '发送消息',
+                'contact.cta': '现在联系',
+                'pricing.title': '価格プラン',
+                'pricing.intro': '隠れた料金なし。契約不要。',
+                'pricing.note': '権利と独占使用 $2.99+',
+                'pricing.card': 'プラン',
+                'pricing.modal.title': 'プランの詳細',
+                'pricing.modal.cta': 'このプランに問い合わせる',
+                'pricing.modal.desc': '詳細を確認し、このプランについてお問い合わせください。',
+                'pricing.modal.zoom': '拡大する',
+                'pricing.modal.closeZoom': '拡大を閉じる',
+                'pricing.modal.imageTextLoading': 'テキストを抽出しています...'
+                , 'email.subject.project': 'カスタムプロジェクトの依頼',
+                'email.body.greeting': 'こんにちは、カスタムプロジェクトに興味があります。次の手順を教えてください。',
+                'notification.fillFields': 'すべての必須フィールドを入力してください。',
+                'notification.sent': 'メッセージが送信されました。',
+                'notification.emailError': '送信中にエラーが発生しました。メールクライアントを使用してください。',
+                'notification.gmailOpened': 'Gmailの作成ウィンドウを開きました。内容を確認して送信してください。',
+                'email.subject.pricing': '価格プランに関するお問い合わせ',
+                'email.body.pricing': 'この価格プランに興味があります。詳細をお知らせください。'
+            }
+        };
+
+        // Current language state
+        let currentLang = 'es';
+
+        function applyTranslations(lang) {
+            if (!translations[lang]) lang = 'es';
+            // text nodes
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) el.textContent = translations[lang][key];
+            });
+            // placeholders
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                const key = el.getAttribute('data-i18n-placeholder');
+                if (translations[lang][key]) el.placeholder = translations[lang][key];
+            });
+            // update document lang
+            document.documentElement.lang = lang;
+            currentLang = lang;
+            // also update any modal CTA text that might be visible
+            const pricingContactBtn = document.querySelector('.pricing-contact');
+            if (pricingContactBtn) pricingContactBtn.textContent = translations[lang]['pricing.modal.cta'] || pricingContactBtn.textContent;
+            const pricingZoomBtn = document.querySelector('.pricing-zoom-btn');
+            if (pricingZoomBtn) {
+                // if currently zoomed, show close text
+                const img = document.querySelector('.pricing-image');
+                if (img && img.classList.contains('zoomed')) {
+                    pricingZoomBtn.textContent = translations[lang]['pricing.modal.closeZoom'] || pricingZoomBtn.textContent;
+                } else {
+                    pricingZoomBtn.textContent = translations[lang]['pricing.modal.zoom'] || pricingZoomBtn.textContent;
+                }
+            }
+        }
+
+        // Attach language buttons
+        document.addEventListener('DOMContentLoaded', () => {
+            const langSelect = document.getElementById('langSelect');
+            if (langSelect) {
+                langSelect.addEventListener('click', (e) => {
+                    const btn = e.target.closest('.lang-btn');
+                    if (!btn) return;
+                    const lang = btn.getAttribute('data-lang');
+                    // toggle active
+                    langSelect.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    applyTranslations(lang);
+                });
+                // set initial active button
+                const initialBtn = langSelect.querySelector('[data-lang="' + currentLang + '"]');
+                if (initialBtn) initialBtn.classList.add('active');
+            }
+            // apply default language
+            applyTranslations(currentLang);
+        });
+
+        // Optional: configure EmailJS credentials here. If left empty, the form will use Gmail web compose fallback.
+        const EMAILJS_USER_ID = ''; // ej: 'user_xxx' (opcional - pon tu userID aquí)
+        const EMAILJS_SERVICE_ID = ''; // ej: 'service_xxx' (opcional - pon tu Service ID aquí)
+        const EMAILJS_TEMPLATE_ID = ''; // ej: 'template_xxx' (opcional - pon tu Template ID aquí)
+
+        function showNotification(msg, timeout = 4000) {
+            if (!formNotification) return;
+            if (!msg || !msg.toString().trim()) return; // don't show empty notifications
+            formNotification.textContent = msg;
+            formNotification.hidden = false;
+            formNotification.classList.remove('hidden');
+            // ensure it's visible
+            formNotification.removeAttribute('hidden');
+            if (formNotification._toastTimer) clearTimeout(formNotification._toastTimer);
+            formNotification._toastTimer = setTimeout(() => {
+                formNotification._toastTimer = null;
+                formNotification.textContent = '';
+                formNotification.hidden = true;
+                formNotification.classList.add('hidden');
+            }, timeout);
+        }
+
+        if (contactForm) {
+                contactForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const name = document.getElementById('cf-name').value.trim();
+                const email = document.getElementById('cf-email').value.trim();
+                const subject = document.getElementById('cf-subject').value.trim();
+                const message = document.getElementById('cf-message').value.trim();
+
+                if (!name || !email || !subject || !message) {
+                    showNotification(translations[currentLang]['notification.fillFields'] || 'Por favor completa todos los campos.');
+                    return;
+                }
+
+                // If EmailJS is configured, use it to send email (no server required)
+                if (EMAILJS_USER_ID && EMAILJS_SERVICE_ID && EMAILJS_TEMPLATE_ID && window.emailjs) {
+                    try {
+                        emailjs.init(EMAILJS_USER_ID);
+                        const templateParams = {
+                            from_name: name,
+                            from_email: email,
+                            subject: subject,
+                            message: message
+                        };
+                        emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+                            .then(() => {
+                                    showNotification(translations[currentLang]['notification.sent'] || 'Mensaje enviado correctamente.');
+                                contactForm.reset();
+                            }, (err) => {
+                                console.error('EmailJS error:', err);
+                                    showNotification(translations[currentLang]['notification.emailError'] || 'Error al enviar. Usa tu cliente de correo.');
+                            });
+                        return;
+                    } catch (err) {
+                        console.warn('EmailJS not available or failed to init:', err);
+                    }
+                }
+                // First try to POST to backend /api/contact
+                fetch('/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, email, subject, message })
+                }).then(async (resp) => {
+                    if (resp.ok) {
+                        const data = await resp.json();
+                        showNotification(translations[currentLang]['notification.sent'] || 'Mensaje enviado correctamente.');
+                        contactForm.reset();
+                        return;
+                    }
+                    // server error or unconfigured: fallback to Gmail
+                    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=space3darte@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent('Nombre: ' + name + '\nEmail: ' + email + '\n\n' + message)}`;
+                    window.open(gmailUrl, '_blank', 'noopener');
+                    showNotification(translations[currentLang]['notification.gmailOpened'] || 'Se abrió Gmail para que completes y envíes el mensaje.');
+                    contactForm.reset();
+                }).catch((err) => {
+                    // network error: fallback to Gmail
+                    console.warn('Contact endpoint failed, falling back to Gmail compose:', err);
+                    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=space3darte@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent('Nombre: ' + name + '\nEmail: ' + email + '\n\n' + message)}`;
+                    window.open(gmailUrl, '_blank', 'noopener');
+                    showNotification(translations[currentLang]['notification.gmailOpened'] || 'Se abrió Gmail para que completes y envíes el mensaje.');
+                    contactForm.reset();
+                });
+            });
+        }
+
+        // Smooth scroll para enlaces internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                // if anchor is a contact action (we handle contact flow separately), skip smooth scroll
+                if (this.classList.contains('contact-btn') || this.classList.contains('modal-contact') || this.classList.contains('btn-email-request')) {
+                    return;
+                }
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // --------- Portafolio dinámico y modal --------------
+        const featuredImages = [
+            { file: 'Proyecto GameBoy- (1).jpg', titleKey: 'portfolio.item1.title', descKey: 'portfolio.item1.desc' },
+            { file: 'Proyecto GameBoy- (3).jpg', titleKey: 'portfolio.item2.title', descKey: 'portfolio.item2.desc' },
+            { file: 'Proyecto GameBoy- (10).jpg', titleKey: 'portfolio.item3.title', descKey: 'portfolio.item3.desc' },
+            { file: 'Proyecto GameBoy- (29).jpg', titleKey: 'portfolio.item4.title', descKey: 'portfolio.item4.desc' },
+            { file: 'Proyecto GameBoy- (4).jpg', titleKey: 'portfolio.item5.title', descKey: 'portfolio.item5.desc' },
+            { file: 'Proyecto GameBoy- (2).jpg', titleKey: 'portfolio.item6.title', descKey: 'portfolio.item6.desc' },
+        ];
+
+        const allImages = [
+            // keep same list as in imgs folder — used for decorative gallery
+            'Proyecto GameBoy- (1).jpg','Proyecto GameBoy- (2).jpg','Proyecto GameBoy- (3).jpg','Proyecto GameBoy- (4).jpg','Proyecto GameBoy- (5).jpg','Proyecto GameBoy- (6).jpg','Proyecto GameBoy- (7).jpg','Proyecto GameBoy- (8).jpg','Proyecto GameBoy- (9).jpg','Proyecto GameBoy- (10).jpg','Proyecto GameBoy- (11).jpg','Proyecto GameBoy- (12).jpg','Proyecto GameBoy- (13).jpg','Proyecto GameBoy- (14).jpg','Proyecto GameBoy- (15).jpg','Proyecto GameBoy- (16).jpg','Proyecto GameBoy- (17).jpg','Proyecto GameBoy- (18).jpg','Proyecto GameBoy- (19).jpg','Proyecto GameBoy- (20).jpg','Proyecto GameBoy- (21).jpg','Proyecto GameBoy- (22).jpg','Proyecto GameBoy- (23).jpg','Proyecto GameBoy- (24).jpg','Proyecto GameBoy- (25).jpg','Proyecto GameBoy- (26).jpg','Proyecto GameBoy- (27).jpg','Proyecto GameBoy- (28).jpg','Proyecto GameBoy- (29).jpg','Proyecto GameBoy- (30).jpg'
+        ];
+
+        // Remove duplicates and featured from decor
+        const featuredFiles = new Set(featuredImages.map(f => f.file));
+        const decorImages = allImages.filter(f => !featuredFiles.has(f));
+
+        const portfolioGrid = document.getElementById('portfolioGrid');
+        const decorGrid = document.getElementById('decorGallery');
+
+        function createElementFromHTML(htmlString) {
+            const div = document.createElement('div');
+            div.innerHTML = htmlString.trim();
+            return div.firstChild;
+        }
+
+        featuredImages.forEach(item => {
+            const src = encodeURI('images/' + item.file);
+            const titleText = translations[currentLang][item.titleKey] || '';
+            const descText = translations[currentLang][item.descKey] || '';
+            const el = createElementFromHTML(`
+                <div class="portfolio-item" role="button" tabindex="0" data-file="${item.file}" aria-label="Ver ${titleText}">
+                    <img src="${src}" alt="${titleText}" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <h3 data-i18n="${item.titleKey}">${titleText}</h3>
+                        <p data-i18n="${item.descKey}">${descText}</p>
+                        <a href="#contacto" class="btn contact-btn" data-i18n="contact.cta" data-title="${titleText}">${translations[currentLang]['contact.cta']}</a>
+                    </div>
+                </div>
+            `);
+            // attach fallback handler for image load failures
+            const imgEl = el.querySelector('img');
+            imgEl.addEventListener('error', () => {
+                console.warn('Portfolio image failed to load, using fallback:', src);
+                imgEl.src = 'images/portfolio_1.svg';
+            });
+            portfolioGrid.appendChild(el);
+        });
+
+        // decorative small thumbnails
+        decorImages.forEach((file, i) => {
+            const src = encodeURI('images/' + file);
+            const el = createElementFromHTML(`
+                <div class="decor-item">
+                    <img src="${src}" alt="decorative image ${i+1}" loading="lazy">
+                </div>
+            `);
+            const imgEl = el.querySelector('img');
+            imgEl.addEventListener('error', () => {
+                console.warn('Decor image failed to load, using fallback:', src);
+                imgEl.src = 'images/portfolio_2.svg';
+            });
+            decorGrid.appendChild(el);
+        });
+
+        // Modal for enlarged portfolio view (insert into DOM)
+        const modalHTML = `
+            <div id="imageModal" class="modal" aria-hidden="true">
+                <div class="modal-content">
+                    <button class="modal-close" aria-label="Cerrar">&times;</button>
+                    <img class="modal-image" src="" alt="" />
+                    <div class="modal-info">
+                        <h3 class="modal-title" data-i18n="modal.title"></h3>
+                        <p class="modal-desc" data-i18n="modal.desc"></p>
+                        <a href="#contacto" class="btn modal-contact" data-i18n="contact.cta">Contactar ya</a>
+                    </div>
+                </div>
+            </div>
+        `;
+        document.body.insertAdjacentHTML('beforeend', modalHTML);
+
+        // Pricing modal: enlarged view for pricing cards
+        const pricingModalHTML = `
+            <div id="pricingModal" class="modal" aria-hidden="true">
+                <div class="modal-content pricing-modal-content">
+                    <button class="modal-close" aria-label="Cerrar">&times;</button>
+                    <img class="pricing-image" src="" alt="" />
+                    <div class="modal-info pricing-info">
+                        <h3 class="pricing-title"></h3>
+                        <p class="pricing-desc"></p>
+                        <div class="pricing-actions">
+                            <button class="btn pricing-contact" type="button">Contactar este plan</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        document.body.insertAdjacentHTML('beforeend', pricingModalHTML);
+
+        const imageModal = document.getElementById('imageModal');
+        const modalImage = imageModal.querySelector('.modal-image');
+        const modalTitle = imageModal.querySelector('.modal-title');
+        const modalDesc = imageModal.querySelector('.modal-desc');
+        const modalClose = imageModal.querySelector('.modal-close');
+
+        function openModal(file, title, desc) {
+            modalImage.src = encodeURI('images/' + file);
+            modalImage.alt = title;
+            modalTitle.textContent = title;
+            modalDesc.textContent = desc;
+            imageModal.setAttribute('aria-hidden', 'false');
+            imageModal.classList.add('open');
+        }
+
+        function closeModal() {
+            imageModal.setAttribute('aria-hidden', 'true');
+            imageModal.classList.remove('open');
+        }
+
+        portfolioGrid.addEventListener('click', (e) => {
+            const item = e.target.closest('.portfolio-item');
+            if (!item) return;
+            const file = item.getAttribute('data-file');
+            const info = featuredImages.find(f => f.file === file);
+            if (info) {
+                const title = translations[currentLang][info.titleKey] || '';
+                const desc = translations[currentLang][info.descKey] || '';
+                openModal(info.file, title, desc);
+            }
+        });
+
+        // accessibility: open with Enter key
+        portfolioGrid.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                const item = e.target.closest('.portfolio-item');
+                if (!item) return;
+                const file = item.getAttribute('data-file');
+                const info = featuredImages.find(f => f.file === file);
+                if (info) {
+                    const title = translations[currentLang][info.titleKey] || '';
+                    const desc = translations[currentLang][info.descKey] || '';
+                    openModal(info.file, title, desc);
+                }
+            }
+        });
+
+        // Close modal
+        modalClose.addEventListener('click', closeModal);
+        imageModal.addEventListener('click', (e) => {
+            if (e.target === imageModal) closeModal();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        // Smooth scroll for contact buttons inside overlays and modal
+        // Helper to open email compose (Gmail web fallback)
+        const EMAIL_ADDRESS = 'space3darte@gmail.com';
+
+        function openEmailCompose({ subject = '', body = '' } = {}) {
+            const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(EMAIL_ADDRESS)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            // open in a new tab
+            window.open(gmailUrl, '_blank', 'noopener');
+        }
+
+        // Replace contact button behavior to open email compose directly
+        document.body.addEventListener('click', (e) => {
+            // portfolio overlay or modal 'contact' buttons
+            if (e.target.matches('.contact-btn, .modal-contact')) {
+                e.preventDefault();
+                // If the clicked target has a data-title attribute (portfolio overlay), use it; otherwise fall back to modal title
+                const targetTitle = e.target && e.target.dataset && e.target.dataset.title ? e.target.dataset.title : null;
+                const title = targetTitle || ((imageModal && modalTitle && modalTitle.textContent) ? modalTitle.textContent : '');
+                const subject = (currentLang && translations[currentLang] && translations[currentLang]['email.subject.project']) ? translations[currentLang]['email.subject.project'] : 'Solicitud de proyecto personalizado';
+                const bodyPrefix = (currentLang && translations[currentLang] && translations[currentLang]['email.body.greeting']) ? translations[currentLang]['email.body.greeting'] : '';
+                const body = `${bodyPrefix}\n\n${title ? ('Referencia: ' + title) : ''}`;
+                openEmailCompose({ subject, body });
+                closeModal();
+            }
+        });
+
+        // The big CTA button in portfolio to request a custom project
+        const btnRequest = document.querySelector('.btn-email-request');
+        if (btnRequest) {
+            btnRequest.addEventListener('click', (e) => {
+                e.preventDefault();
+                const subject = translations[currentLang]['email.subject.project'] || 'Solicitud de proyecto personalizado';
+                const body = translations[currentLang]['email.body.greeting'] || '';
+                openEmailCompose({ subject, body });
+            });
+        }
+
+        // --------------------- Carousel (decorative images) ---------------------
+        function initCarousel(images) {
+            const container = document.getElementById('carousel');
+            if (!container) return;
+            const track = container.querySelector('.carousel-track');
+            const dots = container.querySelector('.carousel-dots');
+            const prev = container.querySelector('.carousel-control.prev');
+            const next = container.querySelector('.carousel-control.next');
+
+            // Shuffle images to get a dynamic carousel
+            const imgs = images.slice();
+            // Shuffle simple
+            for (let i = imgs.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [imgs[i], imgs[j]] = [imgs[j], imgs[i]];
+            }
+
+            let current = 0;
+            let timer = null;
+            // Solo dejar la transición slide (no fade/zoom/flip/kenburns)
+            const transitionTypes = ['transition-slide'];
+            let currentTransition = 'transition-slide';
+
+            imgs.forEach((file, index) => {
+                const src = encodeURI('images/' + file);
+                const slide = document.createElement('div');
+                slide.className = 'carousel-slide';
+                slide.dataset.index = index;
+                slide.innerHTML = `<img src="${src}" alt="Imagen decorativa ${index+1}" loading="lazy">`;
+                track.appendChild(slide);
+                const dot = document.createElement('button');
+                dot.setAttribute('aria-label', 'Ir a la imagen ' + (index+1));
+                dot.addEventListener('click', () => {
+                    const idx = Array.from(dots.children).indexOf(dot);
+                    if (idx >= 0) goTo(idx);
+                });
+                dots.appendChild(dot);
+                // handle image loading errors: if it fails, remove the slide and dot
+                const imgEl = slide.querySelector('img');
+                imgEl.addEventListener('error', () => {
+                    console.warn('Carousel image failed to load, using fallback:', src);
+                    imgEl.src = 'images/portfolio_3.svg';
+                });
+            });
+            // we'll compute slides dynamically to account for removed nodes
+            function getSlides() { return Array.from(track.children); }
+            function applyTransitionClass() {
+                container.classList.remove(...transitionTypes);
+                container.classList.add(currentTransition);
+            }
+
+            function setActive(index) {
+                const slides = getSlides();
+                if (slides.length === 0) return;
+                // clamp index
+                if (index < 0) index = 0;
+                if (index >= slides.length) index = 0;
+                // already have slides from above
+                if (currentTransition === 'transition-slide') {
+                    track.style.transform = `translateX(-${index * 100}%)`;
+                    slides.forEach(s => s.classList.remove('active'));
+                } else {
+                    slides.forEach((s, i) => s.classList.toggle('active', i === index));
+                }
+                Array.from(dots.children).forEach((d, i) => d.classList.toggle('active', i === index));
+                current = index;
+            }
+
+            function nextSlide() { const slides = getSlides(); if (slides.length) goTo((current + 1) % slides.length); }
+            function prevSlide() { const slides = getSlides(); if (slides.length) goTo((current - 1 + slides.length) % slides.length); }
+
+            function goTo(index) {
+                // Mantener siempre la transición 'slide' para movimientos por transform
+                currentTransition = 'transition-slide';
+                applyTransitionClass();
+                setActive(index);
+                restartTimer();
+            }
+
+            function restartTimer() {
+                if (timer) clearInterval(timer);
+                timer = setInterval(nextSlide, 4000);
+            }
+
+            prev.addEventListener('click', prevSlide);
+            next.addEventListener('click', nextSlide);
+            container.addEventListener('mouseenter', () => { if (timer) clearInterval(timer); });
+            container.addEventListener('mouseleave', () => { restartTimer(); });
+
+            // initial
+            applyTransitionClass();
+            setActive(0);
+            restartTimer();
+        }
+
+        initCarousel(decorImages);
+        // Debug: print number of decor images and slides in carousel
+        setTimeout(() => {
+            const track = document.querySelector('#carousel .carousel-track');
+            const slides = track ? track.children.length : 0;
+            console.log('Decor Images array length:', decorImages.length, 'Carousel slides:', slides);
+        }, 500);
+
+        // --------------------- Pricing grid ---------------------
+        function buildPricingGrid() {
+            const pricingGrid = document.getElementById('pricingGrid');
+            if (!pricingGrid) return;
+            // Images - use uploaded images for each plan (replaces generated SVG labels)
+            const pricingFiles = ['1765497866498.jpg','1765497866512.jpg','1765497866527.jpg','1765497866537.jpg'];
+            const pricingLabelNames = ['Plan 1','Plan 2','Plan 3','Plan 4'];
+
+            function makeLabelSVG(label) {
+                const bg = '#071121';
+                const fg = '#e6f7f9';
+                const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='800' viewBox='0 0 1200 800'>
+                    <rect width='100%' height='100%' fill='${bg}' rx='18' />
+                    <text x='50%' y='46%' dominant-baseline='middle' text-anchor='middle' fill='${fg}' font-family='Segoe UI, Roboto, Arial' font-size='240' font-weight='700'>${label}</text>
+                    <text x='50%' y='72%' dominant-baseline='middle' text-anchor='middle' fill='rgba(230,247,249,0.8)' font-family='Segoe UI, Roboto, Arial' font-size='28'>${label === 'JP' ? '日本語' : (label === 'EN' ? 'English' : (label === 'ES' ? 'Español' : 'Français'))}</text>
+                </svg>`;
+                return 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
+            }
+            pricingFiles.forEach((file, i) => {
+                // build a stable SVG data-URI and use it both as the card image and as the modal image source
+                const imgFileName = pricingFiles[i];
+                const svgData = null; // no svg data used when using real uploaded images
+                const card = document.createElement('div');
+                card.className = 'price-card';
+                card.setAttribute('role', 'button');
+                card.setAttribute('tabindex', '0');
+                card.setAttribute('aria-label', (translations[currentLang]['pricing.card'] || 'Plan') + ' ' + (i+1));
+                card.innerHTML = `
+                    <img src="images/${imgFileName}" alt="${pricingLabelNames[i]} Plan ${i+1}" loading="lazy">
+                    <div class="price-note" data-i18n="pricing.note">${translations[currentLang]['pricing.note'] || 'Derecho y Uso exclusivo $2.99+'}</div>
+                `;
+                // fallback image handler (still keep fallback to a local SVG)
+                const imgEl = card.querySelector('img');
+                imgEl.addEventListener('error', () => {
+                    console.warn('Pricing image failed to load, using fallback (portfolio_4.svg)');
+                    imgEl.src = 'images/portfolio_4.svg';
+                });
+                // store the svg data on the element so the modal can use it reliably
+                // store the image filename to open the modal with the same file
+                card.dataset.imageSrc = 'images/' + imgFileName;
+                card.dataset.fileId = file;
+
+                card.addEventListener('click', () => {
+                    // open pricing modal and show large image and plan info
+                    openPricingModal({ file, index: i, planNumber: i+1, imageSrc: card.dataset.imageSrc });
+                });
+                // keyboard accessibility: open with Enter or Space
+                card.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openPricingModal({ file, index: i, planNumber: i+1, imageSrc: card.dataset.imageSrc });
+                    }
+                });
+                pricingGrid.appendChild(card);
+            });
+        }
+
+        // Build pricing grid on DOM ready
+        document.addEventListener('DOMContentLoaded', () => {
+            buildPricingGrid();
+            // Debug: list pricing card images
+            setTimeout(() => {
+                const imgs = Array.from(document.querySelectorAll('#pricingGrid .price-card img'));
+                console.log('Pricing card images:', imgs.map(i => i.src));
+            }, 500);
+        });
+
+        // Static per-plan details (displayed in modal instead of OCR)
+        const planDetails = {
+            1: `@Space3d_art\nPricing Plans\nNo hidden fees. No contract.\nEasy\nReady model, lighting and personalized shots $10.99 until $18/ by image\nMedium\nScenes to taste, own materials\n$20.99 until $38/by image\nHigh\nModel from scratch, high detail $50.99 until $98/ by image\nRights and Exclusive use $2.99+`,
+            2: `@Space3d_art\nPlan de Precios\nNo hay tarifas ocultas. Sin contratos.\nFácil\nModelo listo, luces y tomas personalizadas\n$10.99\nhasta $18/ por imagen\nMedio\nEscenas al gusto, materiales propios\n$20.99\nhasta $38/ por imagen\nDificil\nModelo desde cero, detalles altos\n$50.99\nhasta $98/ por imagen\nDerecho y Uso exclusivo $2.99+`,
+            3: `Plan de prix\nIl n'y a pas de taux cachés.\nAucun contrat\nFacile\n$10.99\nModèle prêt, Lumières et coups de feu personnalisés\nJusqu'à $18/ par Image\nMoitié\nScènes à goûter, propres matériaux\n$20.99\nJusqu'à $38/ par Image\nDifficile\nModèle à partir de zéro, détails élevés\n$50.99\nJusqu'à $98/ par Image\nDroite et Utilisation exclusive $2.99+`,
+            4: `価格計画\n隠された料金はありません。契約はありません\n簡単\n準備されたモデル、照明、パーソナライズされたショット\n$10.99\nそれまで $18/ 画像によって\n半分\n好みに合わせたシーン、自分の素材\n$20.99\nそれまで $38/ 画像によって\n難しい\nゼロからのモデル、詳細が高くなっています\n$50.99\nそれまで $98/ 画像によって\n適切で排他的な使用\n$2.99+`
+        };
+
+        // Pricing modal handlers
+        const pricingModal = document.getElementById('pricingModal');
+        const pricingImage = pricingModal ? pricingModal.querySelector('.pricing-image') : null;
+        const pricingTitle = pricingModal ? pricingModal.querySelector('.pricing-title') : null;
+        const pricingDescEl = pricingModal ? pricingModal.querySelector('.pricing-desc') : null;
+        const pricingClose = pricingModal ? pricingModal.querySelector('.modal-close') : null;
+        const pricingContactBtn = pricingModal ? pricingModal.querySelector('.pricing-contact') : null;
+        const pricingZoomBtn = pricingModal ? pricingModal.querySelector('.pricing-zoom-btn') : null;
+        let currentPricingPlan = { index: null, file: null, planNumber: null };
+
+                function openPricingModal({ file, index, planNumber, imageSrc } = {}) {
+                    if (!pricingModal || !pricingImage || !pricingTitle || !pricingContactBtn) return;
+                    // Prefer the provided inline SVG data (imageSrc). If not present, try to load an image file.
+                    const src = imageSrc || encodeURI('images/' + file);
+                    pricingImage.src = src;
+                    // graceful fallback if the provided src fails to load
+                    pricingImage.onerror = function () {
+                        if (pricingImage.src && !pricingImage.src.endsWith('portfolio_4.svg')) {
+                            console.warn('Pricing modal image failed to load, falling back to portfolio_4.svg:', pricingImage.src);
+                            pricingImage.src = 'images/portfolio_4.svg';
+                        }
+                    };
+                    console.log('Opening pricing modal image:', src);
+                    pricingImage.alt = translations[currentLang]['pricing.card'] + ' ' + planNumber;
+            pricingTitle.textContent = `${translations[currentLang]['pricing.modal.title'] || 'Detalle del Plan'} — ${translations[currentLang]['pricing.card']} ${planNumber}`;
+            // description uses a predefined plan detail (show provided plan text)
+            const planText = planDetails[planNumber] || (translations[currentLang]['pricing.modal.desc'] || translations[currentLang]['pricing.note'] || '');
+            pricingDescEl.innerHTML = planText.replace(/\n/g, '<br>');
+            currentPricingPlan = { index, file, planNumber, imageSrc: src };
+            pricingModal.setAttribute('aria-hidden', 'false');
+            pricingModal.classList.add('open');
+            // start in zoomed mode so the image appears large on selection
+            if (pricingImage) pricingImage.classList.add('zoomed');
+            if (pricingModal) pricingModal.classList.add('zoomed');
+            // update zoom button text if present
+            const zoomBtnNow = document.querySelector('.pricing-zoom-btn');
+            if (zoomBtnNow) zoomBtnNow.textContent = translations[currentLang]['pricing.modal.closeZoom'] || 'Cerrar zoom';
+        }
+
+        function closePricingModal() {
+            if (!pricingModal) return;
+            pricingModal.setAttribute('aria-hidden', 'true');
+            pricingModal.classList.remove('open');
+        }
+
+        if (pricingClose) pricingClose.addEventListener('click', closePricingModal);
+        if (pricingModal) pricingModal.addEventListener('click', (e) => { if (e.target === pricingModal) closePricingModal(); });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closePricingModal(); });
+
+        if (pricingContactBtn) {
+            pricingContactBtn.addEventListener('click', () => {
+                const planNumber = currentPricingPlan.planNumber;
+                const subjectBase = translations[currentLang]['email.subject.pricing'] || 'Pricing plan inquiry';
+                const subject = `${subjectBase} - ${translations[currentLang]['pricing.card']} ${planNumber}`;
+                const body = `${translations[currentLang]['email.body.pricing'] || 'I am interested in this pricing plan.'}\n\n${translations[currentLang]['pricing.card'] || 'Plan'}: #${planNumber}`;
+                openEmailCompose({ subject, body });
+                closePricingModal();
+            });
+            // update modal CTA text per current language
+            pricingContactBtn.textContent = translations[currentLang]['pricing.modal.cta'] || pricingContactBtn.textContent;
+        }
+        // add a zoom button next to the contact (and allow image click to toggle zoom)
+        if (pricingModal && pricingContactBtn) {
+            const zoomBtn = document.createElement('button');
+            zoomBtn.type = 'button';
+            zoomBtn.className = 'btn pricing-zoom-btn';
+            zoomBtn.textContent = translations[currentLang]['pricing.modal.zoom'] || 'Ampliar imagen';
+            zoomBtn.addEventListener('click', () => {
+                if (!pricingModal || !pricingImage) return;
+                const isZoomed = pricingImage.classList.toggle('zoomed');
+                if (isZoomed) {
+                    pricingModal.classList.add('zoomed');
+                    zoomBtn.textContent = translations[currentLang]['pricing.modal.closeZoom'] || 'Cerrar zoom';
+                } else {
+                    pricingModal.classList.remove('zoomed');
+                    zoomBtn.textContent = translations[currentLang]['pricing.modal.zoom'] || 'Ampliar imagen';
+                }
+            });
+            // attach to actions container
+            const actions = pricingModal.querySelector('.pricing-actions');
+            if (actions) actions.insertBefore(zoomBtn, actions.firstChild);
+            // clicking image toggles zoom too
+            if (pricingImage) {
+                pricingImage.addEventListener('click', () => {
+                    zoomBtn.click();
+                });
+            }
+        }
+
+        // Debug: check that images are visible and report counts
+        function validateImages() {
+            const allImgs = Array.from(document.querySelectorAll('img'));
+            let loaded = 0, failed = 0;
+            allImgs.forEach(img => {
+                if (img.complete && img.naturalWidth > 0) loaded++; else if (img.complete && img.naturalWidth === 0) failed++;
+                // if not complete, attach listeners for counting later
+                if (!img.complete) {
+                    img.addEventListener('load', () => { loaded++; console.log('Image loaded:', img.src); });
+                    img.addEventListener('error', () => { failed++; console.warn('Image failed:', img.src); });
+                }
+            });
+            console.log('Image validation — currently loaded:', loaded, 'failed (so far):', failed, 'total imgs:', allImgs.length);
+        }
+        // run a validation shortly after DOM ready
+        setTimeout(validateImages, 800);
+
+        // (Removed OCR extraction - using static plan details instead)
+    </script>
+</body>
+
+</html>

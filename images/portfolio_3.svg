@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <rect width="100%" height="100%" fill="#111827"/>
+  <g transform="translate(200,120)" fill-opacity="0.95">
+    <path d="M0 200 C 200 -100 400 500 600 200 C 800 -100 1000 500 1200 200 L 1200 800 L 0 800 Z" fill="#f97316"/>
+    <circle cx="900" cy="160" r="80" fill="#06b6d4"/>
+  </g>
+  <text x="40" y="760" fill="#ffffff" font-size="28" font-family="Arial, sans-serif">Space3D — Proyecto: Iluminación y composición</text>
+</svg>
